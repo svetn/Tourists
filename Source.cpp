@@ -2,12 +2,23 @@
 #include "functions.cpp"
 #include <iostream>
 
+void deleteData(CTourists* arr1[], CTourists* arr2[], int number)
+{
+	for (int i = 0; i < number; i++)
+	{
+		delete arr1[i];
+		delete arr2[i];
+	}
+	delete[]arr1;
+	delete[]arr2;
+}
+
 int main()
 {
 	char choice;
 
 	CTourists* tourists = new CTourists[200];
-	CTourists* men = new CTourists[100];
+	CTourists* men = new CTourists[200];
 
 	int nTourists;
 	int nMen;
@@ -57,7 +68,6 @@ int main()
 		}
 	} while (choice != '0');
 
-	delete[]men;
-	delete[]tourists;
+	deleteData(&tourists, &men, nTourists);
 	system("pause");
 }

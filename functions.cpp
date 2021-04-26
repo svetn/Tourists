@@ -18,6 +18,7 @@ static void printWomen(CTourists arr[], int sizeOfarr)
 
 static void arrayForMens(CTourists arr[], int sizeOfArr, CTourists newArr[], int sizeOfNewArr)
 {
+	sizeOfNewArr = 0;
 	std::cin.ignore();
 	std::string country;
 	std::getline(std::cin, country);
